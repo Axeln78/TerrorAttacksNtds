@@ -32,6 +32,3 @@ Resources:
 * **Data acquisition**: already collected and packaged
 * **Requires down-sampling**: no
 * **Network creation**: network is given as a list of edges
-
-
-test of commit

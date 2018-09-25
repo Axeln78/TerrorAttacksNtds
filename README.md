@@ -1,6 +1,6 @@
 # TerrorAttacksNtds
 
-Repository of group 29 of the Network Tour of Data Science EPFL unit
+Repository of group 29 of the Network Tour of Data Science EPFL unit. See https://github.com/mdeff/ntds_2018 for more details
 
 ## Project Description
 

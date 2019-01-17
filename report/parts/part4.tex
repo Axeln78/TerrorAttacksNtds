@@ -21,7 +21,7 @@ where
 \begin{equation}
 |n_1-n_2| = \| \text{features}(n_1)-\text{features}(n_2)\|_2 \\
 \end{equation}
-$\text{features}(n)$ is a binary features vector for each node $n\text{ in }\mathcal{G}$ and $f:~\mathbb{R}^+ \mapsto  \mathbb{R}^+$ is the node distance weighting.
+$\text{features}(n)$ is a binary features vector for each node $n\text{ in }\mathcal{G}$ and $f:~\mathbb{R}^+ \to  \mathbb{R}^+$ is the node distance weighting.
 Examples for $f$ are given in Table~\ref{tab:Prediction accuracy for different node distance weightings}.
 
 For each connected component, the lead node is determined as described below.
@@ -55,7 +55,7 @@ Finally, the prediction algorithm is presented below.
 \vspace{-.5em}
 
  \KwData{Set of connected components $\{C_i^t\}$, $i=1,\dots,10$, and
- the features vector of the next terror attack $n_{t+1}$, i.e. $\text{feature}(n_{t+1})$,  at each timestep~$t$}
+ the features vector of the next terror attack $n_{t+1}$, i.e. $\text{features}(n_{t+1})$,  at each timestep~$t$}
  \KwResult{Location prediction $p_t$ for time $t+1$ at time $t$, at each timestep~$t$}
  
  \For{each timestep $t$}{

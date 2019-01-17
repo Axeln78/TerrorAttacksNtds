@@ -5,7 +5,9 @@ Repository of group 29 of the Network Tour of Data Science EPFL unit. See https:
 ## Repository structure
 
 `data` contains the data used to build the graphs
+
 `notebooks` contains the Jupyter notebooks used to process the data and analyse it
+
 `report` contains the LaTeX files for the report, as well as a PDF version
 
 ## Project Description

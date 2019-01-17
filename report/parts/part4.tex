@@ -9,18 +9,19 @@ L
 \caption{Prediction accuracy for different node distance weightings}
 \begin{center}
 \begin{tabular}{l l l l}
-\multicolumn{2}{l}{\textbf{Weighting}}								& \textbf{Best skewness $\zeta$}		& \textbf{Accuracy} \\
+\multicolumn{2}{l}{
+\textbf{Weighting}}														& \textbf{Best skewness $\zeta$}		& \textbf{Accuracy}\\
 
-Gaussian:		& $w=e^{-d^2/\zeta}-e^{-1/\zeta}$	& \SI{0.01}{}						&\SI{50.5}{\percent} \\
+Gaussian:			& $w=e^{-d^2/\zeta}-e^{-1/\zeta}$							& \SI{0.01}{}						&\SI{50.5}{\percent} \\
 
 Log-Exponential:	& $w=e^{-d} \log\left( \frac{1+\zeta}{d+\zeta}\right)$				&\SI{0.1}{}							& \SI{50}{\percent} \\ 
 
-Linear:		& $w=1-d$												& N.A. 							&\SI{47}{\percent} \\
+Linear:			& $w=1-d$											& N.A. 							&\SI{47}{\percent} \\
 
-Square:		&$w= \begin{cases}
-1	&d < \zeta \\
-0	& \text{otherwise}
-\end{cases}$													& \SI{0.1}{}						& \SI{43}{\percent}
+Square:			&$w= \begin{cases}
+1				&d < \zeta \\
+0				& \text{otherwise}
+				\end{cases}$											& \SI{0.1}{}						& \SI{43}{\percent}
 \end{tabular}
 \end{center}
 \label{default}

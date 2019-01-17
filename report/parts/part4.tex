@@ -1,6 +1,5 @@
 \section{Predictions}
 \label{sec:Predictions}
-
 The algorithm used to predict the terror attack location is the following:
 \begin{enumerate}
 \item From the dataset, select the 10 biggest connected components (``component'' in what follows).
@@ -21,7 +20,7 @@ where
 \begin{equation}
 |n_1-n_2| = \| \text{features}(n_1)-\text{features}(n_2)\|_2 \\
 \end{equation}
-$\text{features}(n)$ is a binary features vector for each node $n\text{ in }\mathcal{G}$ and $f:~\mathbb{R}^+ \mapsto  \mathbb{R}^+$ is the node distance weighting.
+$\text{features}(n)$ is a binary features vector for each node $n\text{ in }\mathcal{G}$ and $f:~\mathbb{R}^+ \mapsto  \mathbb{R}^+$ is the node distance weighting.
 Examples for $f$ are given in Table~\ref{tab:Prediction accuracy for different node distance weightings}.
 
 For each connected component, the lead node is determined as described below.
@@ -64,7 +63,6 @@ Compute the lead component $l(C_i^t )$ for each component $C_i^t$
 
 $p_t = \arg\max_{i=1,\dots,10} w(n_{t+1},l(C_i^t ))$
 }
-\KwRet{$p_t$ \vspace{.5em}}
  \caption{Finding the predicted location of the next terror attack}
 \end{algorithm}
 
@@ -75,7 +73,9 @@ $p_t = \arg\max_{i=1,\dots,10} w(n_{t+1},l(C_i^t ))$
 
 - formation, not labelling
 
--robustness
+- robustness
+
+- lead choice justify mesh
 
 \subsection{Results}
 \label{subsec:Results}

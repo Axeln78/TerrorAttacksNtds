@@ -2,7 +2,15 @@
 
 Repository of group 29 of the Network Tour of Data Science EPFL unit. See https://github.com/mdeff/ntds_2018 for more details.
 
+## Repository structure
+
+`data` contains the data used to build the graphs
+`notebooks` contains the Jupyter notebooks used to process the data and analyse it
+`report` contains the LaTeX files for the report, as well as a PDF version
+
 ## Project Description
+
+(From https://github.com/mdeff/ntds_2018)
 
 The first dataset consists of 1293 terrorist attacks (nodes), each of which is assigned to one of 6 labels indicating the type of the attack. Each attack is described by a 0/1-valued vector of attributes whose entries indicate the absence/presence of a feature. There are a total of 106 distinct features. The files in the dataset can be used to create two distinct graphs. In one of them edges of the graph connect the colocated attacks. On the other one, edges connect co-located terrorist attacks performed by the same terrorist organization. 
 

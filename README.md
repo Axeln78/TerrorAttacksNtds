@@ -18,7 +18,6 @@ The project consists in trying to predict the location of a terror attack based 
 
 (From https://github.com/mdeff/ntds_2018)
 
-
 ### Terrorist Attack dataset
 
 The first dataset consists of 1293 terrorist attacks (nodes), each of which is assigned to one of 6 labels indicating the type of the attack. Each attack is described by a 0/1-valued vector of attributes whose entries indicate the absence/presence of a feature. There are a total of 106 distinct features. The files in the dataset can be used to create two distinct graphs. In one of them edges of the graph connect the colocated attacks. On the other one, edges connect co-located terrorist attacks performed by the same terrorist organization. 
@@ -48,7 +47,7 @@ The second dataset is designed for the classification of the relationships betwe
 | features | 0-1 vector of attribute values                                               |  1,224 |
 | labels   | type of relationship (non exclusive): colleague, congregate, contact, family |      4 |
 
-Resources:
+## External resources for the datasets:
 * <https://linqs.soe.ucsc.edu/node/236>
 * <http://www.cs.umd.edu/~sen/lbc-proj/LBC.html>
 * Paper: <https://pdfs.semanticscholar.org/c047/f91ece3e9ec74bf42b8f69f375e27498a54a.pdf>

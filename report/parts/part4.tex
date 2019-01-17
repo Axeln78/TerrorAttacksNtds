@@ -3,7 +3,55 @@
 
 The algorithm used to predict the terror attack location is the following:
 
-L
+Let $w$ be the application that returns a weight for each pair of nodes $(n_1,n_2)$ in the graph $\mathcal{G}$, defined as
+\begin{align}
+w:~ \mathcal{G}^2	& \to \mathbb{R}^+ \\
+(n_1,n_2) 			& \mapsto f(|n_1-n_2|)
+\end{align}
+where
+\begin{align}
+|n_1-n_2| 				& = \| \text{features}(n_1)-\text{features}(n_2)\|_2 \\
+\text{features}(n)		& \text{ is a binary features vector for each node }n\text{ in }\mathcal{G} \\
+f:~	 \mathbb{R}^+ \mapsto  \mathbb{R}^+ 		&\text{ is a decreasing function}
+\end{align}
+Examples for $f$ are given in Table~\ref{tab:Prediction accuracy for different node distance weightings}.
+
+\begin{algorithm}[H]
+ \KwData{Set of connected components $\{C_i^t\}$, $i=1,\dots,10$, and
+ the features vector of the next terror attack $n_{t+1}$, i.e. $\text{feature}(n_{t+1})$,  at each timestep~$t$}
+ \KwResult{Location prediction $p_t$ for time $t+1$ at time $t$, at each timestep~$t$}
+ 
+ \For{each timestep $t$}{
+ 
+Compute the lead component $l(C_i^t )$ for each component $C_i^t$ 
+
+$p_t = \arg\max_{i=1,\dots,10} w(n_{t+1},l(C_i^t ))$
+}
+\KwRet{$p_t$ \vspace{.5em}}
+ \caption{Finding the predicted location of the next terror attack}
+\end{algorithm}
+
+
+\begin{algorithm}[H]
+ \KwData{Connected component $C$}
+ 
+ \KwResult{Lead node $n_l$}
+ 
+ Initialise $s(n)$ to zero. $s$ is a dictionary mapping a score $s(n)$ for each node $n$
+ 
+ \For{each edge $e$ from $C$}{
+
+Let $e=(n_1,n_2)$, $w$ be the weight of $e$
+
+$s(n_1) \leftarrow s(n_1)+w$
+
+$s(n_2) \leftarrow s(n_2)+w$
+
+}
+\KwRet{$n_l = \arg\max_{n \in C}s(n)$\vspace{.5em}}
+ \caption{Finding the lead node of a connected component with weighted edges}
+\end{algorithm}
+
 
 \begin{table}[H]
 \caption{Prediction accuracy for different node distance weightings}
@@ -24,5 +72,5 @@ Square:			&$w= \begin{cases}
 				\end{cases}$											& \SI{0.1}{}						& \SI{43}{\percent}
 \end{tabular}
 \end{center}
-\label{default}
+\label{tab:Prediction accuracy for different node distance weightings}
 \end{table}

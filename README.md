@@ -2,6 +2,10 @@
 
 Repository of group 29 of the Network Tour of Data Science EPFL unit. See https://github.com/mdeff/ntds_2018 for more details.
 
+## Project Description
+
+The project consists in trying to predict the location of a terror attack based on its features, as well as analyse the network of the terrorist relationships. 
+
 ## Repository structure
 
 `data` contains the data used to build the graphs
@@ -10,7 +14,7 @@ Repository of group 29 of the Network Tour of Data Science EPFL unit. See https:
 
 `report` contains the LaTeX files for the report, as well as a PDF version
 
-## Project Description
+## Resources
 
 (From https://github.com/mdeff/ntds_2018)
 

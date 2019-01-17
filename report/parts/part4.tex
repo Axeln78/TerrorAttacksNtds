@@ -2,37 +2,33 @@
 \label{sec:Predictions}
 
 The algorithm used to predict the terror attack location is the following:
+\begin{enumerate}
+\item From the dataset, select the 10 biggest connected components (``component'' in what follows).
+\item Sort the dataset by date of terror attack.
+\item At this point, a component represents a location, and the nodes are the terror attacks in chronological order.
+\item Select one node per component that is strongly connected to the others, the ``lead" node.
+\item Find the lead node $l^\star$ that is the most strongly linked to the new node (i.e. the next terror attack).
+\item The predicted location of the next terror attack is the location of the component $l^\star$ belongs to.
+\end{enumerate}
 
+The determination of the lead node uses the features vector supplied with each node, and a weighting function $w$.
 Let $w$ be the application that returns a weight for each pair of nodes $(n_1,n_2)$ in the graph $\mathcal{G}$, defined as
 \begin{align}
 w:~ \mathcal{G}^2	& \to \mathbb{R}^+ \\
 (n_1,n_2) 			& \mapsto f(|n_1-n_2|)
 \end{align}
 where
-\begin{align}
-|n_1-n_2| 				& = \| \text{features}(n_1)-\text{features}(n_2)\|_2 \\
-\text{features}(n)		& \text{ is a binary features vector for each node }n\text{ in }\mathcal{G} \\
-f:~	 \mathbb{R}^+ \mapsto  \mathbb{R}^+ 		&\text{ is a decreasing function}
-\end{align}
+\begin{equation}
+|n_1-n_2| = \| \text{features}(n_1)-\text{features}(n_2)\|_2 \\
+\end{equation}
+$\text{features}(n)$ is a binary features vector for each node $n\text{ in }\mathcal{G}$ and $f:~\mathbb{R}^+ \mapsto  \mathbb{R}^+$ is the node distance weighting.
 Examples for $f$ are given in Table~\ref{tab:Prediction accuracy for different node distance weightings}.
 
-\begin{algorithm}[H]
- \KwData{Set of connected components $\{C_i^t\}$, $i=1,\dots,10$, and
- the features vector of the next terror attack $n_{t+1}$, i.e. $\text{feature}(n_{t+1})$,  at each timestep~$t$}
- \KwResult{Location prediction $p_t$ for time $t+1$ at time $t$, at each timestep~$t$}
- 
- \For{each timestep $t$}{
- 
-Compute the lead component $l(C_i^t )$ for each component $C_i^t$ 
-
-$p_t = \arg\max_{i=1,\dots,10} w(n_{t+1},l(C_i^t ))$
-}
-\KwRet{$p_t$ \vspace{.5em}}
- \caption{Finding the predicted location of the next terror attack}
-\end{algorithm}
-
+For each connected component, the lead node is determined as described below.
 
 \begin{algorithm}[H]
+\vspace{-.5em}
+
  \KwData{Connected component $C$}
  
  \KwResult{Lead node $n_l$}
@@ -49,24 +45,55 @@ $s(n_2) \leftarrow s(n_2)+w$
 
 }
 \KwRet{$n_l = \arg\max_{n \in C}s(n)$\vspace{.5em}}
+ \label{alg:leadNode}
  \caption{Finding the lead node of a connected component with weighted edges}
 \end{algorithm}
 
+Finally, the prediction algorithm is presented below. 
+
+\begin{algorithm}[H]
+\vspace{-.5em}
+
+ \KwData{Set of connected components $\{C_i^t\}$, $i=1,\dots,10$, and
+ the features vector of the next terror attack $n_{t+1}$, i.e. $\text{feature}(n_{t+1})$,  at each timestep~$t$}
+ \KwResult{Location prediction $p_t$ for time $t+1$ at time $t$, at each timestep~$t$}
+ 
+ \For{each timestep $t$}{
+ 
+Compute the lead component $l(C_i^t )$ for each component $C_i^t$ 
+
+$p_t = \arg\max_{i=1,\dots,10} w(n_{t+1},l(C_i^t ))$
+}
+\KwRet{$p_t$ \vspace{.5em}}
+ \caption{Finding the predicted location of the next terror attack}
+\end{algorithm}
+
+\subsection{Justification}
+\label{subsec:Justification}
+
+- topology
+
+- formation, not labelling
+
+-robustness
+
+\subsection{Results}
+\label{subsec:Results}
+
 \begin{table}[H]
-\caption{Prediction accuracy for different node distance weightings}
-\label{tab:results}
+\caption{Prediction accuracy for different node distance weightings $f$}
 \begin{center}
 \begin{tabular}{l l l l}
 \multicolumn{2}{l}{
 \textbf{Weighting}}														& \textbf{Best skewness $\zeta$}		& \textbf{Accuracy}\\
 
-Gaussian:			& $w=e^{-d^2/\zeta}-e^{-1/\zeta}$							& \SI{0.01}{}						&\SI{50.5}{\percent} \\
+Gaussian:			& $f(d)=e^{-d^2/\zeta}-e^{-1/\zeta}$							& \SI{0.01}{}						&\SI{50.5}{\percent} \\
 
-Log-Exponential:	& $w=e^{-d} \log\left( \frac{1+\zeta}{d+\zeta}\right)$				&\SI{0.1}{}							& \SI{50}{\percent} \\ 
+Log-Exponential:	& $f(d)=e^{-d} \log\left( \frac{1+\zeta}{d+\zeta}\right)$				&\SI{0.1}{}							& \SI{50}{\percent} \\ 
 
-Linear:			& $w=1-d$											& N.A. 							&\SI{47}{\percent} \\
+Linear:			& $f(d)=1-d$											& N.A. 							&\SI{47}{\percent} \\
 
-Square:			&$w= \begin{cases}
+Square:			&$f(d)= \begin{cases}
 1				&d < \zeta \\
 0				& \text{otherwise}
 				\end{cases}$											& \SI{0.1}{}						& \SI{43}{\percent}

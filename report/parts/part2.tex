@@ -2,15 +2,7 @@
 \label{sec:Exploring the Data}
 
 \subsection{Relationships Dataset}
-
-%\subsection{Terror Attacks Dataset}
-%\begin{figure}[H]
-%\begin{center}
-%\includegraphics[width=\textwidth]{../subGraph.png}
-%\caption{}
-%\label{fig:}
-%\end{center}
-%\end{figure}
+\label{subsec:Relationships Dataset}
 
 \begin{figure}[H]
 \begin{center}
@@ -30,7 +22,11 @@
 \end{center}
 \end{figure}
 
-%\begin{align}
-%w:~		\mathcal{N}^2 &\to \mathcal{R} \\
-%(n_1,n_2)				&\mapsto \alpha_1 l_{n_1,n_2}+\alpha_2 \left(\exp\left(-\frac{\| n_1-n_2\|}{\max_{n_i,n_j\in\mathcal{N},i\neq j}\| n_i-n_j\|}\right)-\exp(-1)\right)
-%\end{align}
+\subsection{Terror Attacks Dataset}
+\label{subsec:Terror Attacks Dataset}
+
+The formation of the network implies a transitive relation between most of the nodes. Indeed, if for most nodes, take $a$ $b$ and $c$ in the network, we have
+\begin{equation}
+a \sim b \text{ and } b \sim c \text{ then } a \sim c 
+\end{equation}
+Equivalently, if attack $a$ took place close to $b$, and attack $b$ took place close to $c$, then it is probable that attack $a$ took place close to $c$.

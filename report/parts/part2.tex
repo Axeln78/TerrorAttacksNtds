@@ -7,6 +7,27 @@
 \begin{figure}[H]
 \begin{center}
     \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{graphRel.png}
+        \caption{Terrorist relations graph, colouring by component ID}
+        \label{fig:graphLoc}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{subGraphRel.png}
+        \caption{Ten biggest components from the terrorist relation graph}
+        \label{fig:subGraph}
+    \end{subfigure}
+\caption{Graphs of the terrorist relations dataset}
+\label{fig:graphPlots}
+\end{center}
+\end{figure}
+
+\subsection{Terror Attacks Dataset}
+\label{subsec:Terror Attacks Dataset}
+
+\begin{figure}[H]
+\begin{center}
+    \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{graphLoc.png}
         \caption{Terror attacks location graph, colouring by component ID}
         \label{fig:graphLoc}
@@ -21,10 +42,6 @@
 \label{fig:graphPlots}
 \end{center}
 \end{figure}
-
-\subsection{Terror Attacks Dataset}
-\label{subsec:Terror Attacks Dataset}
-
 The formation of the network implies a transitive relation between most of the nodes. Indeed, if for most nodes, take $a$ $b$ and $c$ in the network, we have
 \begin{equation}
 a \sim b \text{ and } b \sim c \text{ then } a \sim c 

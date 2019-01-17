@@ -25,3 +25,12 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# LaTeX
+.aux
+.bbl
+.log
+.synctex.gz
+
+# Jupyter
+.ipynb_checkpoints

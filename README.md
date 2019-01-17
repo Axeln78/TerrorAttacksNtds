@@ -43,6 +43,3 @@ Resources:
 | features | 0-1 vector of attribute values                                  |    106 |
 | labels   | kind of attack: arson, bombing, kidnapping, weapon, nbcr, other |      6 |
 
-* **Data acquisition**: already collected and packaged
-* **Requires down-sampling**: no
-* **Network creation**: network is given as a list of edges

@@ -1,6 +1,7 @@
-\section{Predictions}
+\section{Predicting Terror Attack Location}
 \label{sec:Predictions}
-The algorithm used to predict the terror attack location is the following:
+The goal of this part is to predict the location of a terror attack based on its features and the history of previous attacks.
+The algorithm used for prediction is the following:
 \begin{enumerate}
 \item From the dataset, select the 10 biggest connected components (``component'' in what follows).
 \item Sort the dataset by date of terror attack.
@@ -16,14 +17,16 @@ Let $w$ be the application that returns a weight for each pair of nodes $(n_1,n_
 w:~ \mathcal{G}^2	& \to \mathbb{R}^+ \\
 (n_1,n_2) 			& \mapsto f(|n_1-n_2|)
 \end{align}
-where
+where:
 \begin{equation}
 |n_1-n_2| = \| \text{features}(n_1)-\text{features}(n_2)\|_2 \\
 \end{equation}
 $\text{features}(n)$ is a binary features vector for each node $n\text{ in }\mathcal{G}$ and $f:~\mathbb{R}^+ \to  \mathbb{R}^+$ is the node distance weighting.
-Examples for $f$ are given in Table~\ref{tab:Prediction accuracy for different node distance weightings}.
+Examples for $f$ are given in Table~\ref{tab:Prediction accuracy for different node distance weightings} on page~\pageref{tab:Prediction accuracy for different node distance weightings}.
 
 For each connected component, the lead node is determined as described below.
+
+\vspace{1em}
 
 \begin{algorithm}[H]
 \vspace{-.5em}
@@ -48,14 +51,18 @@ $s(n_2) \leftarrow s(n_2)+w$
  \caption{Finding the lead node of a connected component with weighted edges}
 \end{algorithm}
 
+\vspace{1em}
+
 Finally, the prediction algorithm is presented below. 
+
+\vspace{1em}
 
 \begin{algorithm}[H]
 \vspace{-.5em}
 
  \KwData{Set of connected components $\{C_i^t\}$, $i=1,\dots,10$, and
  the features vector of the next terror attack $n_{t+1}$, i.e. $\text{features}(n_{t+1})$,  at each timestep~$t$}
- \KwResult{Location prediction $p_t$ for time $t+1$ at time $t$, at each timestep~$t$}
+ \KwResult{Location prediction $p_t$ at each timestep~$t$}
  
  \For{each timestep $t$}{
  
@@ -77,6 +84,8 @@ The design of prediction algorithm is motivated by the following aspects:
 
 \subsection{Results}
 \label{subsec:Results}
+
+Running the algorithm aforementioned on the terror attacks dataset yields a prediction accuracy around $\frac{1}{2}$ (see Table~\ref{tab:Prediction accuracy for different node distance weightings} below), i.e. half of the predicted location is correct.
 
 \begin{table}[H]
 \caption{Prediction accuracy for different node distance weightings $f$}

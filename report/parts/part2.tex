@@ -1,69 +1,30 @@
 \section{Exploring the Data}
 \label{sec:Exploring the Data}
 
-\subsection{Relationships Dataset}
-\label{subsec:Relationships Dataset}
+The data consists of two datasets: a relationships dataset describing relations between terrorists, and a terror attacks dataset documenting terror events by location and organisation.
+
+%\subsection{Relationships Dataset}
+%\label{subsec:Relationships Dataset}
 
 \begin{figure}[H]
 \begin{center}
 
-        \includegraphics[width=.5\textwidth]{graphRel.png}
+        \includegraphics[width=.7\textwidth]{graphRel.png}
         \label{fig:graphLoc}
-        \caption{Terrorist relation dataset graph. The colouring of each node is related to the type of relation that corresponds to it}
+        \caption{Relationships dataset graph. The colouring of each node is related to its type of relation.}
         
 \end{center}
 \end{figure}
 
+The relationships dataset represents the line graph of a network of relationships between terrorists. Each node represents a relationship between two terrorists. Two nodes are connected if they share a common terrorist. % and each edge a terrorist common to both connections. 
+The label of each node relates to the nature of the relation between the two terrorists. It is an element from \{family, congregate, colleague, contact\}.
 
-This dataset is the line-graph of a network of relationship between terrorists. Each node represents a connection between two individuals and each edge an individual. 
-The label of each note relates to the nature of the relation between the two individual. It is one of the following four: 
-Family - congregate - colleague -contact.
-Two nodes are connected if they share one individual.
+%\subsection{Terror Attacks Dataset}
+%\label{subsec:Terror Attacks Dataset}
 
-Our interest was to investigate the proprieties of the line graph as a relational network. As "original paper on dataset" mentions, an organisation need interpersonal connection to function and studying the structure of the social organisation could yield valuable insight.
-"Paper on line graph for social networks" found that on the basis of a study of an online social network, a social network could be well approximated by the line graph of a scale free network. If that propriety can be verified by our dataset, then we could gain information from the original graph from which the line graph originates.
+The terror attacks graph is built by connecting to nodes (terror attacks) if they share a common location. An other graph can be built by also connecting two terror attacks if they are perpetrated by the same organisation. This graph is not studied here.
 
-\label{subsec:Proprieties of the graphs}
-Social sciences studies have shown that social/relationship networks have the particularities of homophily and transitivity.
-Logically if $a$ \& $b$ are friends and $c$\& $b$ are also, the it is more likely that $a$ \& $c$ are friends than not. This mathematically translates to:
-\begin{equation}
-	a \sim b \text{ and } b \sim c \text{ then } a \sim c
-\end{equation}
-
-As a first research question we will try to verify that our dataset derives from a scale-free network, implying that the graph that generated the relationship dataset have proprieties similar to social networks.
-By creating a scale-free network and making its line graph, we compared the degree distribution of the relationship dataset we were able to show that.
-
-\begin{figure}[H]
-\begin{center}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{graphScaleFree.png}
-        \caption{Scale free network}
-        \label{fig:Scalefree}
-    \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{graphLineScaleFree.png}
-        \caption{Line graph of scale free network}
-        \label{fig:lineG}
-    \end{subfigure}
-    
-    \begin{subfigure}[b]{\textwidth}
-    	\begin{centering}
-        \includegraphics[width=.5\textwidth]{DegreeDiff.png}
-        \caption{\centering Comparison of the degree distribution of the two line graphs. In blue, the created line graph and in orange the degrees of the relationships graph}
-        \label{fig:DegDiff}
-        \end{centering}
-    \end{subfigure}
-\caption{Graphs from the terror attacks dataset}
-\label{fig:RelationshipScaleFree}
-\end{center}
-\end{figure}
-
-
-\subsection{Terror Attacks Dataset}
-\label{subsec:Terror Attacks Dataset}
-
-\begin{figure}[H]
+\begin{figure}[t]
 \begin{center}
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{graphLoc.png}
@@ -81,6 +42,30 @@ By creating a scale-free network and making its line graph, we compared the degr
 \end{center}
 \end{figure}
 
-Similarly to relationships datasets, we have found that the terrorist attacks dataset have very highly connected components, implying transitivity. 
-If attack $a$ took place close to $b$, and attack $b$ took place close to $c$, then it is probable that attack $a$ took place close to $c$.
+Multiple issues have been found in this dataset:
+
+\paragraph{Broadness} 
+The dataset comprises attacks ranging from 1969 to 2005 and spanning the entire globe. Simple and relevant explanations for the graph formation or properties are not likely to be found, since the mechanisms behind two different attacks can be entirely different.
+
+\paragraph{Structure} 
+Half of the nodes are isolated, hence the topological information they carry in the graph is very limited. What is more, the construction of the graph implies a transitive relation inside connected components. Indeed, let $a$, $b$ and $c$ be terror attacks from the same connected component. Let ``$a\sim b$'' mean that terror attacks $a$ and $b$ took place close to each other. Then
+\begin{equation}
+\text{If } \left ( a \sim b \text{ and } b \sim c \right )  \text{ then probably } a \sim c
+\end{equation}
+This property translates into connected component that are almost complete -- hence bearing little topological information.
+
+\paragraph{Reliability} 
+As expected, errors have been found in the data. For example nodes
+ \texttt{Djibouti\_Youth\_Movement\_19900927} 
+ and 
+ \texttt{Armed\_Islamic\_Group\_19950711} 
+ have been connected, whereas the first attack took place in Djibouti~\cite{amnesty1991} and the second one in Paris~\cite{nouvelObs2007}. Hence algorithms using the data must tolerate some error in order to avoid overfitting.
+
+\paragraph{Incompleteness}
+The dataset has been constructed from publicly available sources~\cite{ZSG2006}. Because of the sensitivity of the data behind terrorist attacks and relationships, some of it is classified, making the dataset incomplete.
+
+Further properties of the graphs are discussed below.
+
+%Similarly to relationships datasets, we have found that the terrorist attacks dataset have very highly connected components, implying transitivity. 
+%If attack $a$ took place close to $b$, and attack $b$ took place close to $c$, then it is probable that attack $a$ took place close to $c$.
 

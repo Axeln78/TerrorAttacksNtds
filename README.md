@@ -22,6 +22,8 @@ The project consists in trying to predict the location of a terror attack based 
 
 The first dataset consists of 1293 terrorist attacks (nodes), each of which is assigned to one of 6 labels indicating the type of the attack. Each attack is described by a 0/1-valued vector of attributes whose entries indicate the absence/presence of a feature. There are a total of 106 distinct features. The files in the dataset can be used to create two distinct graphs. In one of them edges of the graph connect the colocated attacks. On the other one, edges connect co-located terrorist attacks performed by the same terrorist organization. 
 
+The files used for this part of the project can be found `notebooks : predictionV2 - processData - graphs `.
+
 ![Screenshot](./notebooks/pics/graphLoc.png)
 
 
@@ -33,10 +35,11 @@ The first dataset consists of 1293 terrorist attacks (nodes), each of which is a
 | labels   | kind of attack: arson, bombing, kidnapping, weapon, nbcr, other |      6 |
 
 
+### Terrorist relationship dataset
 
 The second dataset is designed for the classification of the relationships between the terrorists. The dataset contains 851 relations (aka; nodes of the graph). Each node is assigned to least one label (multiple labeling is also possible) among 4 labels; "Colleague", "Congregate", "Contact", "Family", and is described with 0/1 valued feature vector indicating absence/presence of the attributes, which are 1224 in total. There are 8592 edges on the graph, which connects the nodes involving the same terrorist group. As the goal is the classification of links, we will here build the line graph of the social network between terrorists. That is, instead of having terrorists as nodes and relationships between them as edges, relationships will be nodes and terrorists will be edges.
 
-### Terrorist relationship dataset
+The files used for this part of the project can be found `notebooks : TerrRel`.
 
 ![Screenshot](./notebooks/pics/graphRel.png)
 

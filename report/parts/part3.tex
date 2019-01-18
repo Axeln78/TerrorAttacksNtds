@@ -1,17 +1,18 @@
-\section{Terrorist Relationships as a Social Network?}
-\label{sec:Terrorist Relationships as a Social Network?}
-In this section, the proprieties of the terrorist relationships line graph as a relational network is explored. As~\cite{ZSG2006} mentions, an organisation needs interpersonal connection to function and studying the structure of the social organisation could yield valuable insight.
+\section{Terrorist Relationships as a Social Network}
+\label{sec:Terrorist Relationships as a Social Network}
+In this section, the properties of the terrorist relationships line graph as a relational network is explored. As~\cite{ZSG2006} mentions, an organisation needs interpersonal connection to function and studying the structure of the social organisation could allow to predict the evolution of terrorist organisations.
 
-\cite{krawczyk_line_2011}~found that on the basis of a study of an online social network, a social network could be well approximated by the line graph of a scale free network. If that propriety can be verified by our dataset, %then we could gain information from the original graph from which the line graph originates.
-
-Social sciences studies have shown that social/relationship networks have the particularities of homophily and transitivity.
-Logically if $a$ \& $b$ are friends and $c$\& $b$ are also, the it is more likely that $a$ \& $c$ are friends than not. This mathematically translates to:
-\begin{equation}
-	a \sim b \text{ and } b \sim c \text{ then } a \sim c
-\end{equation}
-
-As a first research question we will try to verify that our dataset derives from a scale-free network, implying that the graph that generated the relationship dataset have proprieties similar to social networks.
-By creating a scale-free network and making its line graph, we compared the degree distribution of the relationship dataset we were able to show that.
+\cite{krawczyk_line_2011}~found that on the basis of a study of an online social network, such a network could be well approximated by the line graph of a scale free network. Assuming that there exists a transitivity relation between nodes (see Equation~\ref{eq:transitivity}) as one would expect in a social network, a scale free network corresponding to the relationships graph has been generated. Its line graph counterpart has then been compared to the relationships graph (see Figure~\ref{fig:RelationshipScaleFree} below).
+%If that propriety can be verified by our dataset, %then we could gain information from the original graph from which the line graph originates.
+%
+%Social sciences studies have shown that social/relationship networks have the particularities of homophily and transitivity.
+%Logically if $a$ \& $b$ are friends and $c$\& $b$ are also, the it is more likely that $a$ \& $c$ are friends than not. This mathematically translates to:
+%\begin{equation}
+%	a \sim b \text{ and } b \sim c \text{ then } a \sim c
+%\end{equation}
+%
+%As a first research question we will try to verify that our dataset derives from a scale-free network, implying that the graph that generated the relationship dataset have proprieties similar to social networks.
+%By creating a scale-free network and making its line graph, we compared the degree distribution of the relationship dataset we were able to show that.
 
 \begin{figure}[H]
 \begin{center}
@@ -39,7 +40,7 @@ By creating a scale-free network and making its line graph, we compared the degr
 \end{center}
 \end{figure}
 
-
+From the degree distribution comparison, we can conclude that the terrorist relationships network shows no significant similarity with a  social network. 
 %\subsection{Terrorist Relations Dataset}
 %
 %\subsection{Terror Attacks Dataset}

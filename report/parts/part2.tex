@@ -17,12 +17,12 @@ The data consists of two datasets: a relationships dataset describing relations 
 \end{figure}
 
 The relationships dataset represents the line graph of a network of relationships between terrorists. Each node represents a relationship between two terrorists. Two nodes are connected if they share a common terrorist. % and each edge a terrorist common to both connections. 
-The label of each node relates to the nature of the relation between the two terrorists. It is an element from \{family, congregate, colleague, contact\}.
+The label of each node relates to the nature of the relation between the two terrorists. It is an element of \{family, congregate, colleague, contact\}.
 
 %\subsection{Terror Attacks Dataset}
 %\label{subsec:Terror Attacks Dataset}
 
-The terror attacks graph is built by connecting to nodes (terror attacks) if they share a common location. An other graph can be built by also connecting two terror attacks if they are perpetrated by the same organisation. This graph is not studied here.
+The terror attacks graph is built by connecting two nodes (terror attacks) if they share a common location. An other graph can be built by also connecting two terror attacks if they are perpetrated by the same organisation. This graph is not studied here.
 
 \begin{figure}[t]
 \begin{center}
@@ -48,9 +48,11 @@ Multiple issues have been found in this dataset:
 The dataset comprises attacks ranging from 1969 to 2005 and spanning the entire globe. Simple and relevant explanations for the graph formation or properties are not likely to be found, since the mechanisms behind two different attacks can be entirely different.
 
 \paragraph{Structure} 
+\label{par:Structure}
 Half of the nodes are isolated, hence the topological information they carry in the graph is very limited. What is more, the construction of the graph implies a transitive relation inside connected components. Indeed, let $a$, $b$ and $c$ be terror attacks from the same connected component. Let ``$a\sim b$'' mean that terror attacks $a$ and $b$ took place close to each other. Then
 \begin{equation}
 \text{If } \left ( a \sim b \text{ and } b \sim c \right )  \text{ then probably } a \sim c
+\label{eq:transitivity}
 \end{equation}
 This property translates into connected component that are almost complete -- hence bearing little topological information.
 

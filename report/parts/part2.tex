@@ -3,13 +3,12 @@
 
 The data consists of two datasets: a relationships dataset describing relations between terrorists, and a terror attacks dataset documenting terror events by location and organisation.
 
-%\subsection{Relationships Dataset}
-%\label{subsec:Relationships Dataset}
-
+\subsection{Relationships Dataset}
+\label{subsec:Relationships Dataset}
 \begin{figure}[H]
 \begin{center}
 
-        \includegraphics[width=.7\textwidth]{graphRel.png}
+        \includegraphics[width=.5\textwidth]{graphRel.png}
         \label{fig:graphLoc}
         \caption{Relationships dataset graph. The colouring of each node is related to its type of relation.}
         
@@ -19,8 +18,8 @@ The data consists of two datasets: a relationships dataset describing relations 
 The relationships dataset represents the line graph of a network of relationships between terrorists. Each node represents a relationship between two terrorists. Two nodes are connected if they share a common terrorist. % and each edge a terrorist common to both connections. 
 The label of each node relates to the nature of the relation between the two terrorists. It is an element of \{family, congregate, colleague, contact\}.
 
-%\subsection{Terror Attacks Dataset}
-%\label{subsec:Terror Attacks Dataset}
+\subsection{Terror Attacks Dataset}
+\label{subsec:Terror Attacks Dataset}
 
 The terror attacks graph is built by connecting two nodes (terror attacks) if they share a common location. An other graph can be built by also connecting two terror attacks if they are perpetrated by the same organisation. This graph is not studied here.
 

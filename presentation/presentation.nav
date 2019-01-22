@@ -21,8 +21,12 @@
 \headcommand {\beamer@framepages {3}{3}}
 \headcommand {\slideentry {5}{0}{2}{4/4}{}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\beamer@partpages {1}{4}}
-\headcommand {\beamer@subsectionpages {5}{4}}
-\headcommand {\beamer@sectionpages {5}{4}}
-\headcommand {\beamer@documentpages {4}}
-\headcommand {\def \inserttotalframenumber {4}}
+\headcommand {\slideentry {5}{0}{3}{5/5}{}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {5}{0}{4}{6/6}{}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@partpages {1}{6}}
+\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\beamer@sectionpages {7}{6}}
+\headcommand {\beamer@documentpages {6}}
+\headcommand {\def \inserttotalframenumber {6}}

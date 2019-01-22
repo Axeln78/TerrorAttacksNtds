@@ -37,6 +37,29 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Predicting Terror Attack Locations}
+\frametitle{Predicting Terror Attack Locations: Setup}
+\begin{enumerate}
+\item From the dataset, select the 10 biggest connected components
+\item Sort the dataset by date of terror attack.
+\item Hence component $\Leftrightarrow$ location
+\item For each node, select lead node $l$ that maximises sum of weights to other nodes
+\item Find the lead node $l^\star$ that is the most strongly linked to the new node (i.e. the next terror attack).
+\item Prediction: next location is location of $l^\star$
+\end{enumerate}
+\end{frame}
 
+\begin{frame}
+\frametitle{Predicting Terror Attack Locations: Results}
+Accuracy slightly over 50\%
+
+%\movie[]{}{predictionAnimation.mp4}
+%\movie[height = 0.6\textwidth, width = 0.8\textwidth]{}{predictionAnimation.mp4}
+%\includemedia[]{alt content}{../notebooks/pics/predictionAnimation.mp4}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=.5\textwidth]{predictionAnimation/predVsTruth-t204.png}
+\caption{Prediction animation (yellow: correct)}
+\label{fig:}
+\end{center}
+\end{figure}
 \end{frame}

@@ -1,0 +1,4 @@
+\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {3}{Exploring the Data}{3}{0}{2}
+\beamer@sectionintoc {4}{Terrorist Relationships as a Social Network}{3}{0}{3}
+\beamer@sectionintoc {5}{Predicting Terror Attacks}{3}{0}{4}

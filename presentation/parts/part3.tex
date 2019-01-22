@@ -1,8 +1,10 @@
 \begin{frame}
-\frametitle{A First Unsuccessful Attempt}
+\frametitle{A First Unsuccessful Attempt: Setup}
 
 \begin{itemize}
+
 \item $\mathcal{G}_t = $ graph of terror attacks at time $t$
+
 \item Let $\textbf{attach}_t$ be a vector such that
 \begin{equation}
 \textbf{attach}_t(i)= \begin{cases}
@@ -10,5 +12,31 @@
 0		& \text{otherwise}
 \end{cases}
 \end{equation}
+
+\item Idea: $\textbf{attach}_t$ smooth $\Rightarrow$ terror attack location can be explained by graph topology 
+
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{A First Unsuccessful Attempt: Result}
+
+\begin{itemize}
+\item Graph nodes: terror attack locations (1293 nodes)
+\item Graph edges: weight based on proximity of features vector (835'278 edges)
+\item Complete graph
+\end{itemize}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=.5\textwidth]{spectrum-1282.png}
+\caption{GFT of $\textbf{attach}_{t=1282}$}
+\label{fig:spectrum-1282}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Predicting Terror Attack Locations}
+
 \end{frame}

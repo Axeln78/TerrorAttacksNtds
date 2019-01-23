@@ -52,14 +52,21 @@
 \frametitle{Predicting Terror Attack Locations: Results}
 Accuracy slightly over 50\%
 
-%\movie[]{}{predictionAnimation.mp4}
-%\movie[height = 0.6\textwidth, width = 0.8\textwidth]{}{predictionAnimation.mp4}
-%\includemedia[]{alt content}{../notebooks/pics/predictionAnimation.mp4}
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=.5\textwidth]{predictionAnimation/predVsTruth-t204.png}
-\caption{Prediction animation (yellow: correct)}
-\label{fig:}
+%\includegraphics[width=.5\textwidth]{predictionAnimation/predVsTruth-t204.png}
+%\caption{Prediction animation (yellow: correct)}
+%\label{fig:}
+\begin{center}
+	\includemedia[activate=pageopen,
+  			      width=240pt,height=150pt,
+  			      addresource=predictionAnimation.mov,
+  			      flashvars={%
+                               src=predictionAnimation.mov      % same path as in addresource! %&scaleMode=stretch % removes black bars
+			      &autoPlay=true   % optional configuration
+			      &loop=true          % variables
+			      }]{\fbox{Click!}}{StrobeMediaPlayback.swf}
+	\end{center}
 \end{center}
 \end{figure}
 \end{frame}

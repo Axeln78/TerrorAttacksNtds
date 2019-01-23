@@ -16,7 +16,7 @@ If we find that relationships networks are similar to social networks then we co
 \begin{frame}
 \frametitle{Making a scale free graph}
 
-We build the line graph from a scale free graph that has a node number $n$.
+We build the line graph from a scale free graph with parameters that makes sense given the previously stated assumptions.
 
 \begin{figure}[H]
 \begin{center}
@@ -31,8 +31,7 @@ We build the line graph from a scale free graph that has a node number $n$.
 
 \begin{frame}
 \frametitle{Making a comparable line graph}
-
-We can only use one connected component, so we use the largest one of the dataset.
+We make a line graph of the scale free network but can only compare it to one connected component, so we use the largest one of the dataset.
 
 \begin{figure}[H]
 \begin{center}
@@ -52,18 +51,17 @@ We can only use one connected component, so we use the largest one of the datase
 Preliminary conclusion: The relationship network cannot be modeled by the line graph of a scale free network
 \begin{itemize}
 \item This could be because the relations of terrorist are not similar to social ties
-\item Possibly because the size of the largest component is too small, making an unrealistically small number of relationships for the scale free graph to represent correctly a social network.
+\item Is the size of the largest component is too small, making it hard for a scale free graph to represent a social network.
 \end{itemize}
 
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=.5\textwidth]{DegreeDiff.png}
-\caption{Difference of degree distribution between the dataset and the generated line graph}
+\caption{Difference of degree between the dataset and the line graph}
 \label{fig:degdiff}
 \end{center}
 \end{figure}
-
 \end{frame}
 
 % ----------------------------------------------------------------------------------------

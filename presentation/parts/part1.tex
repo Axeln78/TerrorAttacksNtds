@@ -22,8 +22,21 @@
 \frametitle{Exploring The Data: What Is a Line Graph?}
 
 \begin{definition}
-	Given a graph $\mathcal{G}$, 
+	Given a graph $\mathcal{G}$, its line graph $L\{\mathcal{G}\}$ is defined as follows: 
+	\begin{itemize}
+		\item Each node of $L\{\mathcal{G}\}$ stands for an edge of $\mathcal{G}$
+		\item Two nodes of $L\{\mathcal{G}\}$ are connected $\Leftrightarrow$ they share a node of $\mathcal{G}$
+	\end{itemize}
 \end{definition}
+
+\begin{figure}
+		\begin{center}
+			\includegraphics[width=.5\textwidth]{linegraph}
+			\caption{Construction of a line graph}
+			\label{fig:line graph}
+		\end{center}
+	\end{figure}
+
 \end{frame}
 
 \begin{frame}
@@ -31,7 +44,7 @@
 	
 	\begin{itemize}
 		\item Each node is an attack
-		\item Nodes are connected if the attacks were in same location
+		\item Nodes are connected if the attacks were in close locations
 		\item Location, date, organisation and binary vector of features for each node
 	\end{itemize}
 	
@@ -39,7 +52,7 @@
 		\begin{center}
 			\includegraphics[width=.5\textwidth]{graphLoc.png}
 			\caption{Graph of the terrorist attacks dataset}
-			\label{fig:graph relations}
+			\label{fig:graph attacks}
 		\end{center}
 	\end{figure}
 \end{frame}
@@ -60,6 +73,6 @@
 	
 	\begin{itemize}
 		\item A lot of isolated nodes
-		\item Full connectivity in sub-components
+		\item The sub-components are complete
 	\end{itemize}
 \end{frame}

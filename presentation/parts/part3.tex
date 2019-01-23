@@ -1,25 +1,28 @@
 \begin{frame}
-\frametitle{A First Unsuccessful Attempt: Setup}
+\frametitle{Predicting Terror Attack Locations: 1st Attempt}
 
 \begin{itemize}
 
 \item $\mathcal{G}_t = $ graph of terror attacks at time $t$
 
-\item Let $\textbf{attach}_t$ be a vector such that
+\item Let $\alpha_t$ be a vector such that
 \begin{equation}
-\textbf{attach}_t(i)= \begin{cases}
+\alpha_t(i)= \begin{cases}
 1 		& \text{ if node added at } t+1 \text{ links to node }i \\
 0		& \text{otherwise}
 \end{cases}
 \end{equation}
 
-\item Idea: $\textbf{attach}_t$ smooth $\Rightarrow$ terror attack location can be explained by graph topology 
+\item Idea: $\alpha_t$ smooth $\Rightarrow$ terror attack location can be explained by graph topology 
 
 \end{itemize}
+\begin{center}
+\includegraphics[width=.7\textwidth]{attachSignal.png}
+\end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{A First Unsuccessful Attempt: Result}
+\frametitle{Predicting Terror Attack Locations: Results}
 
 \begin{itemize}
 \item Graph nodes: terror attack locations (1293 nodes)
@@ -29,7 +32,7 @@
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=.5\textwidth]{spectrum-1282.png}
-\caption{GFT of $\textbf{attach}_{t=1282}$}
+\caption{GFT of $\alpha_{t=1282}$}
 \label{fig:spectrum-1282}
 \end{center}
 \end{figure}
@@ -37,7 +40,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Predicting Terror Attack Locations: Setup}
+\frametitle{Predicting Terror Attack Locations: 2nd Attempt}
 \begin{enumerate}
 \item From the dataset, select the 10 biggest connected components
 \item Sort the dataset by date of terror attack.

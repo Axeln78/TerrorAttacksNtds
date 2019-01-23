@@ -9,13 +9,16 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="93.989586mm"
+   height="39.606636mm"
+   viewBox="0 0 93.989586 39.606636"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06"
-   sodipodi:docname="attachSignal.svg">
+   sodipodi:docname="attachSignal.svg"
+   inkscape:export-filename="/Users/elias/Dropbox/GoodNotes Backup/MA1/NTDS/public/TerrorAttacksNtds/presentation/gfx/attachSignal.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,8 +27,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="162.35705"
-     inkscape:cy="1000.1953"
+     inkscape:cx="151.58383"
+     inkscape:cy="30.550147"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -34,10 +37,16 @@
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
-     inkscape:snap-global="false">
+     inkscape:snap-global="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
     <inkscape:grid
        id="grid815"
-       type="xygrid" />
+       type="xygrid"
+       originx="-2.8504134"
+       originy="-256.55197" />
   </sodipodi:namedview>
   <defs
      id="defs2" />
@@ -49,14 +58,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      id="layer1"
      inkscape:groupmode="layer"
-     inkscape:label="Layer 1">
+     inkscape:label="Layer 1"
+     transform="translate(-2.8504134,-0.84140365)">
     <path
        d="m 34.398334,19.302494 a 2.6458333,2.6458333 0 0 1 -2.617076,2.645677 2.6458333,2.6458333 0 0 1 -2.673966,-2.588166 2.6458333,2.6458333 0 0 1 2.558951,-2.701938 2.6458333,2.6458333 0 0 1 2.729591,2.529433"
        sodipodi:open="true"
@@ -68,7 +78,7 @@
        sodipodi:cx="31.752501"
        sodipodi:type="arc"
        id="path817-4"
-       style="opacity:1;fill:#1200a7;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       style="opacity:1;fill:#9acdff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
        d="m 21.169168,32.531662 a 2.6458333,2.6458333 0 0 1 -2.617076,2.645677 2.6458333,2.6458333 0 0 1 -2.673966,-2.588166 2.6458333,2.6458333 0 0 1 2.558951,-2.701938 2.6458333,2.6458333 0 0 1 2.729591,2.529433"
        sodipodi:open="true"
@@ -431,6 +441,6 @@
        sodipodi:cx="94.194168"
        sodipodi:type="arc"
        id="path817-4-0"
-       style="opacity:1;fill:#1200a7;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       style="opacity:1;fill:#001013;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
 </svg>
